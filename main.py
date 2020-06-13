@@ -10,7 +10,7 @@ from data_forms import  vk_chatbot_unloading,   \
 
 class Test:
     def __init__(self, obj):
-        self = obj # should obj be another reference to some instance to be a valid substitution?
+        self = obj # should obj be another reference to some instance to be a valid substitution? 
 
 
 file = open("input-horoshevo.json", "r")
