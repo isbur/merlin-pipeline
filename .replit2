@@ -1,0 +1,2 @@
+#run = "python -m trace -l main.py > .log"
+run = "python main.py"

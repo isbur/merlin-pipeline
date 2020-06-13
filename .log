@@ -1,0 +1,88 @@
+I'm going to get data somehow...
+Inside conventions.py
+########################################
+Inside transform_to
+########################################
+<fix.prefix object at 0x7fb94ea97e50>
+Oh oh
+Inside transform_to
+########################################
+<fix.prefix object at 0x7fb94ea97e50>
+Oh oh
+Inside transform_to
+########################################
+<fix.prefix object at 0x7fb94ea97e50>
+Oh oh
+Inside transform_to
+########################################
+<fix.prefix object at 0x7fb94ea97e50>
+Oh oh
+
+functions called:
+filename: /home/runner/merlin-pipeline/conventions.py, modulename: conventions, funcname: <module>
+filename: /home/runner/merlin-pipeline/conventions.py, modulename: conventions, funcname: transform_to
+filename: /home/runner/merlin-pipeline/customized_operators.py, modulename: customized_operators, funcname: <module>
+filename: /home/runner/merlin-pipeline/customized_operators.py, modulename: customized_operators, funcname: to_func
+filename: /home/runner/merlin-pipeline/data.py, modulename: data, funcname: <module>
+filename: /home/runner/merlin-pipeline/data.py, modulename: data, funcname: Data
+filename: /home/runner/merlin-pipeline/data.py, modulename: data, funcname: Data.get
+filename: /home/runner/merlin-pipeline/fix.py, modulename: fix, funcname: <module>
+filename: /home/runner/merlin-pipeline/fix.py, modulename: fix, funcname: infix
+filename: /home/runner/merlin-pipeline/fix.py, modulename: fix, funcname: infix.__init__
+filename: /home/runner/merlin-pipeline/fix.py, modulename: fix, funcname: infix.__rtruediv__
+filename: /home/runner/merlin-pipeline/fix.py, modulename: fix, funcname: infix.__truediv__
+filename: /home/runner/merlin-pipeline/fix.py, modulename: fix, funcname: infix.operator_function_thin_wrapper
+filename: /home/runner/merlin-pipeline/fix.py, modulename: fix, funcname: prefix
+filename: /home/runner/merlin-pipeline/fix.py, modulename: fix, funcname: prefix.__init__
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: ModuleSpec.__init__
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _ImportLockContext.__enter__
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _ImportLockContext.__exit__
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _ModuleLock.__init__
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _ModuleLock.acquire
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _ModuleLock.release
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _ModuleLockManager.__enter__
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _ModuleLockManager.__exit__
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _ModuleLockManager.__init__
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _call_with_frames_removed
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _find_and_load
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _find_and_load_unlocked
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _find_spec
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _get_module_lock
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _init_module_attrs
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _load_unlocked
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _new_module
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: _verbose_message
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: cached
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: cb
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: find_spec
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: has_location
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: module_from_spec
+filename: <frozen importlib._bootstrap>, modulename: <frozen importlib, funcname: parent
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: <listcomp>
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: FileFinder._get_spec
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: FileFinder.find_spec
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: FileLoader.__init__
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: FileLoader.get_data
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: SourceFileLoader.path_stats
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: SourceLoader.get_code
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: _LoaderBasics.create_module
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: _check_name_wrapper
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: _classify_pyc
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: _compile_bytecode
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: _get_cached
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: _get_spec
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: _path_importer_cache
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: _path_is_mode_type
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: _path_isfile
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: _path_join
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: _path_split
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: _path_stat
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: _relax_case
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: _unpack_uint32
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: _validate_timestamp_pyc
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: cache_from_source
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: exec_module
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: find_spec
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: get_filename
+filename: <frozen importlib._bootstrap_external>, modulename: <frozen importlib, funcname: spec_from_file_location
+filename: main.py, modulename: main, funcname: <module>
