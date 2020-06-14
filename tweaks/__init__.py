@@ -9,6 +9,13 @@ class customize():
         self.innerObject = instance
     def __rshift__(a, b):
         b.innerObject = a.innerObject
+    def __rrshift__(self, lefthand_operand):
+        # если "правильного" класса
+        if "Customized" in lefthand_operand.__class__.__name__:
+            self.innerObject = lefthand_operand.innerObject
+        # а иначе просто положить в innerObject
+        else:
+            self.innerObject = lefthand_operand
 
 
 def to_func(a, b):

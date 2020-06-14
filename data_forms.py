@@ -1,13 +1,3 @@
-
-# https://stackoverflow.com/a/48100440/10216512
-import tweaks
-#from customized_operators import transform, to
-#import customized_operators.transform as transfrom
-#import customized_operators.to as to
-transfrom = tweaks.transform
-to = tweaks.to            
-
-
 def vk_chatbot_unloading(data):
     # Dummy function
     pass
@@ -35,5 +25,15 @@ def dictionary_of_lists(data):
     return data
 
 
+from tweaks.merlindiary import *
+# But maybe this is unnecessary...
+data = transmute(data)  # Some magic happens here!
+####
 def marks_on_merlindiary(data):
+    for lesson in data:
+        pass
+        if lesson @ проставлен :
+            pass
+        else:
+            проставь | lesson
     return data
