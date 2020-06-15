@@ -1,13 +1,13 @@
-from tweaks import  customize,           \
-                    transform,                  \
-                    to
+from tweaks.used_in.main import customize,      \
+                                transform,      \
+                                to
 from data_forms import  vk_chatbot_unloading,   \
                         plaintext,              \
                         json_file,              \
                         dictionary_of_lists,    \
                         marks_on_merlindiary
 
-file = open("input-horoshevo.json", "r")
+file = open("inputs/horoshyovo.json", "r")
 file, data = [customize(obj) for obj in [file, ""]]
 
 
@@ -22,3 +22,4 @@ for form_of_data in (
     marks_on_merlindiary
 ):
     transform | data /to/ form_of_data
+

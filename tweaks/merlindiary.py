@@ -1,7 +1,7 @@
-__all__ = ["transmute", "проставлен", "проставь"]
+#__all__ = ["transmute", "проставлен", "проставь"]
 
 
-from merlindiary.abstract import check, set
+from merlindiary.abstract import check, set, compare
 
 
 def transmute():
@@ -16,18 +16,4 @@ def transmute():
     #            present students
     #    their marks
     ####
-
-
-class проставлен:
-    @staticmethod
-    def __rmatmult__(lesson):   # aka lefthand_operand
-        check (lesson)
-        pass
-
-class проставь:
-    @staticmethod
-    def __or__(lesson):     # aka righthand_operand
-        set (lesson)
-        pass
-
 

@@ -1,18 +1,25 @@
-from tweaks import customize
-from tweaks.merlindiary import group, lessons
+from tweaks.used_in.merlindiary.abstract import All, Group, Lessons, Lesson_list
+all = All()
+group = Group()
+lessons = Lessons()
+lesson_list = Lesson_list()
 
-import concrete
-from concrete import get
+from . import concrete
+from .concrete.actions import get
 
 from config import Horoshyovo
 
 
-def check(lesson):
-    lesson_list = customize([])
 
+
+def check(lesson):
     get (all | Horoshyovo-group | lessons) >> lesson_list
     return lesson in lesson_list
 
 
 def set(lesson):
-    concrete.set(lesson)
+    concrete.actions.set(lesson)
+
+
+
+

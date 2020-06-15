@@ -1,20 +1,15 @@
 def vk_chatbot_unloading(data):
     # Dummy function
-    pass
     return data
 
 
 def plaintext(data):
     # Dummy function
-    # See Data.get()
-    pass
     return data
 
 
 def json_file(data):
     # Dummy function
-    # See Data.get()
-    pass
     return data
 
 
@@ -25,10 +20,13 @@ def dictionary_of_lists(data):
     return data
 
 
-from tweaks.merlindiary import *
-# But maybe this is unnecessary...
-data = transmute(data)  # Some magic happens here!
-####
+
+
+from tweaks.used_in.data_forms import Проставлен, Проставь
+проставлен = Проставлен()
+проставь = Проставь()
+
+
 def marks_on_merlindiary(data):
     for lesson in data:
         pass
