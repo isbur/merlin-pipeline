@@ -1,6 +1,6 @@
-from tweaks.used_in.main import customize,      \
-                                transform,      \
-                                to
+from main.tweaks import customize,      \
+                        transform,      \
+                        to
 from data_forms import  vk_chatbot_unloading,   \
                         plaintext,              \
                         json_file,              \

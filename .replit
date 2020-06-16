@@ -1,0 +1,8 @@
+
+#run = "python -m trace -l main.py > .log"
+#run = "python main.py"
+run = "pytest"
+#run = "python -i playground.py"
+
+# pip install pytest
+# export PATH=$PATH:/home/runner/.local/bin

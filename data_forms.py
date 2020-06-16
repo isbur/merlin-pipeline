@@ -13,25 +13,31 @@ def json_file(data):
     return data
 
 
-import json
-# assuming data is a json file
+import json # assuming data is a json file
+from merlindiary import check
 def dictionary_of_lists(data):
+
     data = json.load(data)
+
+    # Add some tweaks for next stage
+    class Customize:
+        def __init__(self, lesson):
+            self.innerObject = lesson
+            self.проставлен = check(lesson)
+
+    for i, lesson in enumerate(data):
+        data[i] = Customize(lesson)
+
     return data
 
 
-
-
-from tweaks.used_in.data_forms import Проставлен, Проставь
-проставлен = Проставлен()
-проставь = Проставь()
-
+from merlindiary import проставь
 
 def marks_on_merlindiary(data):
     for lesson in data:
         pass
-        if lesson @ проставлен :
+        if lesson . проставлен :
             pass
         else:
-            проставь | lesson
+            проставь ( lesson )
     return data

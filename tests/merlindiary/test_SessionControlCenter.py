@@ -1,4 +1,4 @@
-from merlindiary.commons import SessionControlCenter
+from merlindiary.SessionControlCenter import SessionControlCenter
 
 
 SessionControlCenter.init()
