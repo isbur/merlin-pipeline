@@ -1,1 +1,1 @@
-from .main import check, проставь
+from .Lesson.main import Lesson

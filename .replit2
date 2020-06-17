@@ -1,0 +1,9 @@
+
+
+run = "python3 -m trace -t main.py"
+#run = "python3 main.py"
+#run = "pytest"
+#run = "python3 -i playground.py"
+
+# pip install pytest bs4 requests
+# export PATH=$PATH:/home/runner/.local/bin

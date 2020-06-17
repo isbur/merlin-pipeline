@@ -1,9 +1,10 @@
 import sys
 
 import requests
-from bs4 import BeautifulSoup
 
 from config import login_page_url
+
+from .miscellaneous import get_csrf_token_from_
 
 
 class SessionControlCenter:
@@ -20,9 +21,7 @@ class SessionControlCenter:
             print("Try to init() first", file=sys.stderr)
             raise
 
-        login_page = BeautifulSoup(login_page.text, "html.parser")
-        meta_element = login_page.select_one("meta[name=csrf-token]")
-        csrf_token = meta_element["content"]
+        csrf_token = get_csrf_token_from_(login_page)
         
         PostData = {
             "_csrf": csrf_token,
@@ -30,3 +29,9 @@ class SessionControlCenter:
             "LoginForm[password]":"merlin010"
         }
         return cls.session.post(login_page_url, PostData)
+
+
+SessionControlCenter.init()
+SessionControlCenter.login()
+session = SessionControlCenter.session
+

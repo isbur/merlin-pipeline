@@ -14,24 +14,17 @@ def json_file(data):
 
 
 import json # assuming data is a json file
-from merlindiary import check
-def dictionary_of_lists(data):
+from merlindiary import Lesson
+def list_of_Lesson_objects(data):
 
     data = json.load(data)
-
-    # Add some tweaks for next stage
-    class Customize:
-        def __init__(self, lesson):
-            self.innerObject = lesson
-            self.проставлен = check(lesson)
-
-    for i, lesson in enumerate(data):
-        data[i] = Customize(lesson)
+    for i, protolesson in enumerate(data):
+        data[i] = Lesson(protolesson)
 
     return data
 
 
-from merlindiary import проставь
+from tweaks_used_in.data_forms import проставь
 
 def marks_on_merlindiary(data):
     for lesson in data:
