@@ -28,7 +28,9 @@ from tweaks_used_in.data_forms import проставь
 
 def marks_on_merlindiary(data):
     for lesson in data:
-        pass
+        
+        print(lesson)
+        
         if lesson . проставлен :
             pass
         else:

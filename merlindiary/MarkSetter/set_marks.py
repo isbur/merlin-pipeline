@@ -2,10 +2,11 @@ from .login import Merlin
 from .miscellaneous import beautify, get_csrf_token
 from .constants import names_shortcuts
 
-from fuzzysearch import find_near_matches
 from fuzzywuzzy import process
 import json
 import re
+
+import os
 
 
 class Marks(Merlin):
@@ -19,36 +20,41 @@ class Marks(Merlin):
         "mark_dictation"
     )
 
-    lesson_id = -1
-    lesson_soup = ""
-    lesson_RR_object = {}
-    marks_dict = {}
-    students_data = []
 
-    
     def __init__(self, lesson_id):
         Merlin.__init__(self)
         self.login()
         self.lesson_id = lesson_id
         self.lesson_RR_object = self.s.get(Marks.base_url + str(self.lesson_id))
         self.lesson_soup = beautify(self.lesson_RR_object)
-        self.get_students_from_page()
-        self.get_marks()
+        
 
+    def get_marks_from_file(self):
 
-    def get_marks(self):
+        old_dir = os.getcwd()
+        os.chdir(
+            os.path.dirname(
+                os.path.realpath(__file__)
+            )
+        )
+
         input_file = open("marks.input", "r")
         S = input_file.readlines()
         input_file.close()
+
+        os.chdir(old_dir)
+
         D = {}
         for string in S:
             L = string.split()
             D[L[0]] = list(map(int, L[1:]))
-        self.marks_dict = D
+        
+        return D
 
 
     def get_students_from_page(self):
         html_rows = self.lesson_soup.find_all(name="tr", attrs={"data-key":re.compile(".+")})
+
         D = []
         for i, row in enumerate(html_rows):
             student = {}
@@ -59,18 +65,16 @@ class Marks(Merlin):
             cell = row.find(attrs={"data-col-seq":"1"})
             student['name'] = cell.string
             D.append(student)
-        self.students_data = D
+        return D
 
 
     def get_student_by_name(self, name):
-        #print(name)
+
         choices = [student['name'] for student in self.students_data]
-        #print(choices)
+        
         res = process.extractOne(name, choices)
-        #print(res)
         # Кажется, для библиотеки fuzzywuzzy условие на длину результата бессмысленно - оно всегда что-нибудь да найдёт
         if len(res) == 0 or res[1] < 90:
-            #print("Deeper...")
             key = process.extractOne(name, names_shortcuts.keys())[0]
             another_name = names_shortcuts[key]
             res = process.extractOne(another_name, choices)
@@ -80,9 +84,13 @@ class Marks(Merlin):
 
 
     def set_all(self):
-        print(self.marks_dict)
+
+        self.students_data = self.get_students_from_page()
+
+        self.marks_dict = self.get_marks_from_file()
+
         for name, marks in self.marks_dict.items():
-            print(name, marks)
+
             student = self.get_student_by_name(name)
             for i, mark in enumerate(marks):
                 csrf_token = get_csrf_token(self.lesson_RR_object)

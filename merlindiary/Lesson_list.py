@@ -1,8 +1,5 @@
-# import pprint as pp
-# pp_instance = pp.PrettyPrinter(indent=4, width=20, compact=True)
-# pprint = pp_instance.pprint
-# from pprint import pprint
 from datetime import datetime
+from config import Horoshyovo
 from config import start_date
 from .Lesson.BaseLesson import BaseLesson as Lesson
 
@@ -10,12 +7,10 @@ from .Lesson.BaseLesson import BaseLesson as Lesson
 class Lesson_list_of_group_:
 
     def __init__(self, X="foo group name", testmode = False):
+        self.groupName = X
         self.groupCode = self.get_groupCode(X)
         self.innerObject = self.get_all_lessons_of_group(X, testmode)
     
-    def __iter__(self):
-        return iter(self.innerObject)
-
     def __contains__(self, lesson_from_input):
 
         if type(lesson_from_input) == type({}):
@@ -26,7 +21,7 @@ class Lesson_list_of_group_:
             print(__file__)
             print(type(lesson_from_input))
 
-        verdict = any(
+        verdict = any([
             all([
                 lesson_from_input.date == lesson_from_merlindiary.date,
                 all(
@@ -39,16 +34,27 @@ class Lesson_list_of_group_:
                 )
             ])
             for lesson_from_merlindiary in self.innerObject
-        )
+        ])
         return verdict
 
+    def __getitem__(self,key):
+        return [
+            lesson 
+            for lesson in self.innerObject
+            if str(lesson.id) == str(key) # str type casting just in case...
+        ][0]
+    
+    def __iter__(self):
+        return iter(self.innerObject)
+
+    def __str__(self):
+        return self.innerObject.__str__()
 
     def get_groupCode(self, groupName):
-        groupDict = {
-            "Хорошёво":39,
-            "Беляево":33
-        }
-        return groupDict[groupName]
+
+        from .const_data import mapping_groupName_groupCode
+
+        return mapping_groupName_groupCode[groupName]
     
 
     def get_all_lessons_of_group(self, groupName, testmode=False):
@@ -112,14 +118,17 @@ class Lesson_list_of_group_:
                 # Were they splitted? Hm...
 
             lesson_list.append(Lesson(lesson))
-            # pprint(lesson)
-            # print("#"*40)
+
             if testmode:
                 break
 
         return lesson_list
-
     
+    def update(self):
+        self.innerObject = self.get_all_lessons_of_group(
+            self.groupName
+        )
 
 
+lesson_list = Lesson_list_of_group_(Horoshyovo)
 

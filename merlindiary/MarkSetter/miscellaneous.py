@@ -19,3 +19,20 @@ def get_csrf_token(r):
 
 def sprint(obj):
     [print(attr, i) for attr, i in obj.__dict__.items()]
+
+
+import os
+
+# class SwitchDirectoryFunctionWithState:
+
+#     def __init__(self):
+#         self.rememberedDir = self.realize(os.getcwd())
+    
+#     def __call__(self)
+
+#     def realize(self, path):
+#         return os.path.dirname(
+#             os.path.realpath(path)
+#         )
+#     pass
+# switch_dir

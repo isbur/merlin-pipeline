@@ -1,1 +1,1 @@
-from .Lesson.main import Lesson
+from .Lesson.LessonExtended import Lesson
