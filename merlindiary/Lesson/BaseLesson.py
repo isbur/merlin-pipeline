@@ -9,8 +9,16 @@ class BaseLesson: # base object; without "проставлен"
     def __init__(self, protolesson):
 
         self.protolesson = protolesson
+        self.protolesson["marks"] = {
+            key:value
+            for key, value
+            in self.protolesson["marks"].items()
+            if int(get_student_id_by_(key)) >= 0
+        }
         self.student_ids = [
-            get_student_id_by_(key) for key in protolesson["marks"].keys()
+            get_student_id_by_(key) 
+            for key 
+            in protolesson["marks"].keys()
         ]
 
         protolesson_type = detect | protolesson | type
@@ -22,7 +30,8 @@ class BaseLesson: # base object; without "проставлен"
             )
             self.marks = {
                 get_student_id_by_(key):value
-                for key, value in protolesson["marks"].items()
+                for key, value 
+                in protolesson["marks"].items()
             }
         elif protolesson_type == "Merlindiary":
             self.date = datetime.strptime(

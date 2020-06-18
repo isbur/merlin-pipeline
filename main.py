@@ -1,4 +1,3 @@
-# coding=utf-8
 from tweaks_used_in.main import customize,      \
                                 transform,      \
                                 to
@@ -7,8 +6,8 @@ from data_forms import  vk_chatbot_unloading,   \
                         json_file,              \
                         list_of_Lesson_objects, \
                         marks_on_merlindiary
-
-file = open("inputs/horoshyovo.json", "r")
+from config import horoshyovo
+file = open("inputs/"+horoshyovo+".json", "r")
 file, data = [customize(obj) for obj in [file, ""]]
 
 
